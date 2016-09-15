@@ -104,22 +104,19 @@
     }
     
     .leftBoard {
-        width: 50%;
-        min-width: 60rem;
+        width: 70%;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        margin-left: 2rem;
+        top: 2rem;
+        left: 2rem;
         font-size: 1rem;
         background-color: white;
         overflow: auto;
         opacity: 0;
         box-shadow: 0px 0px 10px;
     }
-
-    .leftBoard p{
-        font-size:1.2rem;
+    
+    .leftBoard p {
+        font-size: 1.2rem;
     }
     
     .leftBoard .page-header>h1 {
@@ -158,7 +155,7 @@
         .intro img {
             width: 12rem;
             height: 15rem;
-            right:0;
+            right: 0;
             position: absolute;
             border: 1px solid black;
         }
@@ -171,6 +168,29 @@
     }
     
     .tech {}
+    
+    .leftBoardMenu {
+        position: absolute;
+        top: 2rem;
+        left: 74%;
+        opacity: 0;
+    }
+    
+    .leftBoardMenu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .leftBoardMenu ul li+li {
+        margin-top: 1rem;
+    }
+    
+    .leftBoardMenu a {
+        color: #333;
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: none;
+    }
     </style>
 </head>
 
@@ -227,6 +247,15 @@
             </div>
         </div>
     </div>
+    <div class="leftBoardMenu">
+        <ul>
+            <li><a href="javascript:" id="home">首页</a></li>
+            <li><a href="#personIntro">个人简介</a></li>
+            <li><a href="#personTech">个人技术</a></li>
+            <li><a href="#projects">项目经历</a></li>
+            <li><a href="#hoby">个人爱好</a></li>
+        </ul>
+    </div>
     <div class="container">
         <div class="circle">
             <div class="content">Home</div>
@@ -249,6 +278,7 @@
                 $(".leftBoard").css("opacity", "1");
                 $(".leftBoard").css("width", "89%");
                 $(".leftBoard").css("min-width", "50%");
+                $(".leftBoardMenu").hide();
             }
         }
     })();
@@ -343,6 +373,7 @@
         var sons = parent.find(".son");
         var content = parent.find(".content");
         var leftBoard = $(".leftBoard");
+        var leftBoardMenu = $(".leftBoardMenu");
 
         var pointsXY = getPointsPosition(sons.length, R);
         sons.each(function(index) {
@@ -372,33 +403,40 @@
             var opacity = leftBoard.css("opacity");
             if (leftBoard.css("opacity") == 0) {
                 parent.animate({
-                    left: "50%"
+                    left: "50%",
+                    opacity: 0,
                 }, 500, function() {
                     leftBoard.animate({
                         opacity: 1
                     }, 500);
+                    leftBoardMenu.animate({
+                        opacity: 1
+                    }, 500);
                 });
             }
+        });
 
+        $(".leftBoardMenu a").click(function() {
             setTimeout(function() {
                 leftBoard.scrollTop(leftBoard.scrollTop() - 20);
             }, 5);
         });
 
-        content.click(function(e) {
-            if (e.target.className != "content") {
-                return;
-            }
+        $("#home").click(function() {
             leftBoard.animate({
                 opacity: 0
             }, 300, function() {
                 parent.animate({
-                    left: 0
+                    left: 0,
+                    opacity: 1
                 }, 300, function() {
 
                 });
             });
-        });
+            leftBoardMenu.animate({
+                opacity: 0
+            }, 300);
+        })
 
         parent.add(sons).add(content).css("animation-play-state", "running");
         // parent.add(sons).add(content).css("animation", "no");
