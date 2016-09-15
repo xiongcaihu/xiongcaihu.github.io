@@ -414,6 +414,10 @@
                     }, 500);
                 });
             }
+
+            setTimeout(function() {
+                leftBoard.scrollTop(leftBoard.scrollTop() - 20);
+            }, 5);
         });
 
         $(".leftBoardMenu a").click(function() {
