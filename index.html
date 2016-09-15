@@ -4,6 +4,7 @@
 <head>
     <title></title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css" rel="stylesheet">
     <style type="text/css">
@@ -12,16 +13,20 @@
         background-color: #0e90d2;
     }
     
+    html {
+        font-size: 10px;
+    }
+    
     .circle {
         position: fixed;
-        width: 150px;
-        height: 150px;
+        width: 10rem;
+        height: 10rem;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         margin: auto;
-        border-radius: 200px;
+        border-radius: 20rem;
         animation: rote 20s linear infinite forwards;
         animation-play-state: paused;
         border: 4px solid #333;
@@ -35,9 +40,9 @@
         right: 0;
         bottom: 0;
         left: 0;
-        line-height: 150px;
+        line-height: 10rem;
         text-align: center;
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 900;
         color: white;
         animation: contentRote 20s linear infinite forwards;
@@ -54,20 +59,20 @@
         background-color: transparent;
         color: white;
         font-weight: 900;
-        font-size: 16px;
-        border:4px solid #333;
-        border-radius: 100px;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
+        font-size: 1rem;
+        border: 4px solid #333;
+        border-radius: 10rem;
+        width: 8rem;
+        height: 8rem;
+        line-height: 8rem;
         animation: sonRote 20s linear infinite forwards;
         animation-play-state: paused;
     }
     
     .son:hover {
-        width: 110px;
-        height: 110px;
-        line-height: 110px;
+        width: 11rem;
+        height: 11rem;
+        line-height: 11rem;
         opacity: 1!important;
         box-shadow: 0px 0px 5px #333;
     }
@@ -100,16 +105,21 @@
     
     .leftBoard {
         width: 50%;
-        min-width: 700px;
+        min-width: 60rem;
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
-        margin-left: 2em;
+        margin-left: 2rem;
+        font-size: 1rem;
         background-color: white;
         overflow: auto;
         opacity: 0;
         box-shadow: 0px 0px 10px;
+    }
+
+    .leftBoard p{
+        font-size:1.2rem;
     }
     
     .leftBoard .page-header>h1 {
@@ -117,30 +127,47 @@
     }
     
     .page-body>h4 {
-        margin-top: 2em;
-        margin-bottom: 1em;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         border-left: 2px solid;
-        padding-left: 1em;
+        padding-left: 1rem;
     }
     
     .intro>p>span {
-        width: 200px;
+        width: 15rem;
         float: right;
-        margin-right: 2em;
+        margin-right: 6rem;
         white-space: nowrap;
     }
     
     .intro>p {
-        text-indent: 1.5em;
-        margin-top: 1.5em;
+        text-indent: 1.5rem;
+        margin-top: 1.5rem;
     }
     
     .intro img {
-        width: 150px;
-        height: 200px;
+        width: 14rem;
+        height: 18rem;
         float: right;
-        margin: 0 2em;
+        margin: 0 2rem;
         border: 1px solid black;
+    }
+    
+    @media screen and (max-device-width: 800px) {
+        .intro img {
+            width: 12rem;
+            height: 15rem;
+            right:0;
+            position: absolute;
+            border: 1px solid black;
+        }
+        .intro>p>span {
+            width: 15rem;
+            float: right;
+            margin-right: 55.6%;
+            white-space: nowrap;
+        }
     }
     
     .tech {}
@@ -173,7 +200,7 @@
             </div>
             <div class="page-body tech">
                 <h4>熟练度（1-100）</h4>
-                <div id="proficiency" style="margin:1em 2em;width: 90%;height:400px;position:relative;"></div>
+                <div id="proficiency" style="margin:1em 2em;width: 90%;height:40rem;position:relative;"></div>
             </div>
             <div class="page-header">
                 <h1 id="projects">项目经历</h1>
@@ -213,10 +240,22 @@
     <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/echarts/3.2.3/echarts.min.js"></script>
     <script type="text/javascript">
+    (function() {
+        if (navigator.userAgent.indexOf("Windows") == -1) { //移动端
+            var width = window.screen.width;
+            if (width < 800) {
+                document.documentElement.style.fontSize = width / 375 * 9 + "px";
+                $(".circle").hide();
+                $(".leftBoard").css("opacity", "1");
+                $(".leftBoard").css("width", "89%");
+                $(".leftBoard").css("min-width", "50%");
+            }
+        }
+    })();
     $(function() {
         makeEchart();
 
-        makeCircle(150);
+        makeCircle(12);
 
         //设置左边白板的高度为屏幕
         $(".leftBoard").css("height", window.innerHeight * 0.9 + "px");
@@ -291,6 +330,15 @@
     }
 
     function makeCircle(R) {
+        var rootFontSize = $("html").css("font-size");
+        rootFontSize = parseInt(rootFontSize.split("px")[0]);
+
+        if (rootFontSize == 12) {
+            rootFontSize = 10;
+        }
+
+        R = R * rootFontSize;
+
         var parent = $(".circle");
         var sons = parent.find(".son");
         var content = parent.find(".content");
@@ -300,7 +348,7 @@
         sons.each(function(index) {
             var x = pointsXY[index].x;
             var y = pointsXY[index].y;
-            var borderWidth=4;
+            var borderWidth = 4;
             var parentWidth = parent.width();
             var parentHeight = parent.height();
             var width = $(this).width();
@@ -333,7 +381,7 @@
             }
 
             setTimeout(function() {
-                leftBoard.scrollTop(leftBoard.scrollTop()-20);
+                leftBoard.scrollTop(leftBoard.scrollTop() - 20);
             }, 5);
         });
 
