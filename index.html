@@ -1,31 +1,389 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>xiongcaihu.GitHub.io by xiongcaihu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">xiongcaihu.GitHub.io</h1>
-      <h2 class="project-tagline">cy home</h2>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h1>
-<a id="xiongcaihugithubio" class="anchor" href="#xiongcaihugithubio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>xiongcaihu.github.io</h1>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css" rel="stylesheet">
+    <style type="text/css">
+    body {
+        font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+        background-color: #0e90d2;
+    }
+    
+    .circle {
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 200px;
+        animation: rote 20s linear infinite forwards;
+        animation-play-state: paused;
+        border: 4px solid #333;
+        white-space: nowrap;
+    }
+    
+    .circle>.content {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        line-height: 150px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 900;
+        color: white;
+        animation: contentRote 20s linear infinite forwards;
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+    
+    .son {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        cursor: pointer;
+        text-align: center;
+        background-color: transparent;
+        color: white;
+        font-weight: 900;
+        font-size: 16px;
+        border:4px solid #333;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        animation: sonRote 20s linear infinite forwards;
+        animation-play-state: paused;
+    }
+    
+    .son:hover {
+        width: 110px;
+        height: 110px;
+        line-height: 110px;
+        opacity: 1!important;
+        box-shadow: 0px 0px 5px #333;
+    }
+    
+    .son > a {
+        color: inherit;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    
+    @keyframes rote {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes sonRote {
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+    
+    @keyframes contentRote {
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+    
+    .leftBoard {
+        width: 50%;
+        min-width: 700px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        margin-left: 2em;
+        background-color: white;
+        overflow: auto;
+        opacity: 0;
+        box-shadow: 0px 0px 10px;
+    }
+    
+    .leftBoard .page-header>h1 {
+        font-weight: bold;
+    }
+    
+    .page-body>h4 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        border-left: 2px solid;
+        padding-left: 1em;
+    }
+    
+    .intro>p>span {
+        width: 200px;
+        float: right;
+        margin-right: 2em;
+        white-space: nowrap;
+    }
+    
+    .intro>p {
+        text-indent: 1.5em;
+        margin-top: 1.5em;
+    }
+    
+    .intro img {
+        width: 150px;
+        height: 200px;
+        float: right;
+        margin: 0 2em;
+        border: 1px solid black;
+    }
+    
+    .tech {}
+    </style>
+</head>
 
-      <footer class="site-footer">
+<body style="overflow-y: hidden;">
+    <div class="leftBoard container">
+        <div class="inside">
+            <div class="page-header">
+                <h1 id="personIntro">个人简介</h1>
+            </div>
+            <div class="page-body intro">
+                <a href="https://github.com/xiongcaihu/vtable/blob/master/self.jpg?raw=true" target="_blank"><img src="https://github.com/xiongcaihu/vtable/blob/master/self.jpg?raw=true"></a>
+                <h4>基本信息</h4>
+                <p>姓名：陈宇<span>出生日期：1991-11-28</span></p>
+                <p>毕业院校：中南大学<span>专业：计算机</span></p>
+                <p>毕业时间：2015<span>邮件：xiongcaihu@qq.com</span></p>
+                <p>电话：15111045763<span>目前单位：中兴通讯股份有限公司</span></p>
+                <p>github：<a href="https://github.com/xiongcaihu" target="_blank">https://github.com/xiongcaihu</a></p>
+                <h4>应聘岗位</h4>
+                <p>web前端开发</p>
+                <h4>薪资要求</h4>
+                <p>12k-20k</p>
+                <h4>个人优势</h4>
+                <p style="word-break: break-all">深刻理解w3c标准，http协议，ECMASCRIPT标准。 熟悉jquery，bootstrap，vue，angularjs，gulp，webpack，requirejs，AMD，CMD，Commonjs，nodejs，mockjs 对前后端分离，restful api设计，ajax，以及前端和后端的交互都非常熟。 用java，spring，spring mvc，mybatis，mysql一套做过后台。</p>
+            </div>
+            <div class="page-header">
+                <h1 id="personTech">个人技术</h1>
+            </div>
+            <div class="page-body tech">
+                <h4>熟练度（1-100）</h4>
+                <div id="proficiency" style="margin:1em 2em;width: 90%;height:400px;position:relative;"></div>
+            </div>
+            <div class="page-header">
+                <h1 id="projects">项目经历</h1>
+            </div>
+            <div class="page-body tech">
+                <h4>湖南卓景京蚂蚁分期商城 2014-2015</h4>
+                <p>项目简介：本项目是一个购物商城，旨在为大学生提供方便的分期购买商品的服务，类似 <a href="http://www.fenqile.com/" target="_blank">分期乐</a></p>
+                <p>职责：负责前后台开发，用到的技术：html，js，css，bootstrap，jquery，java，springmvc，spring，mybatis，mysql</p>
+                <p>项目链接：<a href="http://www.myfenqi.com/" target="_blank">http://www.myfenqi.com/</a></p>
+                <h4>中兴通讯度量系统（pc端） 2015-至今</h4>
+                <p>项目简介：本项目是一个基于大数据的可视化分析平台，利用highchart图表对海量数据进行直观的统计分析，并在图表的基础上提供可定制的服务（比如：增加备注，修改文字，修改颜色，增加预警线，提供预警功能，邮件发送，自定义分析规则，生成报告等功能）。</p>
+                <p>职责：负责前端开发，用到的技术：html，js，css，jquery，underscore，gulp，vue，bootstrap，less，highchart</p>
+            </div>
+            <div class="page-header">
+                <h1 id="hoby">个人爱好</h1>
+            </div>
+            <div class="page-body tech">
+                <h4>喜欢逛的网站和app</h4>
+                <p>知乎，掘金，推酷，csdn，豆瓣，github，简书</p>
+                <h4>关注的国内大牛</h4>
+                <p>尤雨溪，玉伯，司徒正美，李晶，王福朋，赵锦江，张鑫旭，汤姆大叔，阮一峰等</p>
+                <h4>总结</h4>
+                <p>热爱前端，热爱技术，热爱工作，热爱同事，热爱生活。</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="circle">
+            <div class="content">Home</div>
+            <div class="son"><a href="#personIntro">个人简介</a></div>
+            <div class="son"><a href="#personTech">个人技术</a></div>
+            <div class="son"><a href="#projects">项目经历</a></div>
+            <div class="son"><a href="#hoby">个人爱好</a></div>
+        </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/echarts/3.2.3/echarts.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        makeEchart();
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+        makeCircle(150);
 
-    </section>
+        //设置左边白板的高度为屏幕
+        $(".leftBoard").css("height", window.innerHeight * 0.9 + "px");
+    });
 
-  
-  </body>
+    function makeEchart() {
+        var myechart1 = echarts.init(document.getElementById("proficiency"));
+
+        var option1 = {
+            title: {
+
+            },
+            tooltip: {},
+            legend: {
+
+            },
+            radar: {
+                // shape: 'circle',
+                indicator: [{
+                    name: 'html',
+                    max: 100
+                }, {
+                    name: 'css',
+                    max: 100
+                }, {
+                    name: 'js',
+                    max: 100
+                }, {
+                    name: 'less',
+                    max: 100
+                }, {
+                    name: 'jquery',
+                    max: 100
+                }, {
+                    name: 'bootstrap',
+                    max: 100
+                }, {
+                    name: 'underscore',
+                    max: 100
+                }, {
+                    name: 'vue',
+                    max: 100
+                }, {
+                    name: 'angularjs',
+                    max: 100
+                }, {
+                    name: 'gulp',
+                    max: 100
+                }, {
+                    name: 'webpack',
+                    max: 100
+                }, {
+                    name: 'nodejs',
+                    max: 100
+                }, {
+                    name: 'java',
+                    max: 100
+                }]
+            },
+            series: [{
+                name: '',
+                type: 'radar',
+                // areaStyle: {normal: {}},
+                data: [{
+                    value: [90, 90, 90, 70, 90, 60, 60, 90, 60, 60, 60, 60, 60],
+                    name: '技能熟练度'
+                }]
+            }]
+        };
+
+        myechart1.setOption(option1);
+    }
+
+    function makeCircle(R) {
+        var parent = $(".circle");
+        var sons = parent.find(".son");
+        var content = parent.find(".content");
+        var leftBoard = $(".leftBoard");
+
+        var pointsXY = getPointsPosition(sons.length, R);
+        sons.each(function(index) {
+            var x = pointsXY[index].x;
+            var y = pointsXY[index].y;
+            var borderWidth=4;
+            var parentWidth = parent.width();
+            var parentHeight = parent.height();
+            var width = $(this).width();
+            var height = $(this).height();
+
+            $(this).css("top", (parentHeight / 2 - height / 2 - borderWidth) + "px");
+            $(this).css("left", (parentWidth / 2 - width / 2 - borderWidth) + "px");
+            $(this).animate({
+                left: (x + (parentWidth / 2 - width / 2 - borderWidth)) + "px",
+                top: (y + (parentHeight / 2 - height / 2 - borderWidth)) + "px",
+                opacity: 0.9,
+            }, 1000, "linear");
+        });
+
+        sons.hover(function() {
+            $(this).parent("*").add(sons).add(content).css("animation-play-state", "paused");
+        }).mouseout(function() {
+            $(this).parent("*").add(sons).add(content).css("animation-play-state", "running");
+        }).click(function(e) {
+            var sonContent = $(this).html();
+            var opacity = leftBoard.css("opacity");
+            if (leftBoard.css("opacity") == 0) {
+                parent.animate({
+                    left: "50%"
+                }, 500, function() {
+                    leftBoard.animate({
+                        opacity: 1
+                    }, 500);
+                });
+            }
+
+            setTimeout(function() {
+                leftBoard.scrollTop(leftBoard.scrollTop()-20);
+            }, 5);
+        });
+
+        content.click(function(e) {
+            if (e.target.className != "content") {
+                return;
+            }
+            leftBoard.animate({
+                opacity: 0
+            }, 300, function() {
+                parent.animate({
+                    left: 0
+                }, 300, function() {
+
+                });
+            });
+        });
+
+        parent.add(sons).add(content).css("animation-play-state", "running");
+        // parent.add(sons).add(content).css("animation", "no");
+        // parent.add(sons).add(content).css("border-radius", 0);
+    }
+
+    function getPointsPosition(count, R) {
+        var pi = 0.017453293;
+        var points = [];
+        var startDeg = 90;
+        var temp = 360 / count;
+
+        for (var i = 0; i < count; i++) {
+            var obj = {
+                x: R * calcDeg(90 - temp * i, "cos"),
+                y: R * calcDeg(90 - temp * i, "sin"),
+            }
+
+            points.push(obj);
+        }
+
+        function calcDeg(a, way) {
+            if (a % 90 == 0) {
+                a = a - 0.000000001;
+            }
+            var b = way == "cos" ? Math.cos(0.017453293 * a) : Math.sin(0.017453293 * a);
+            b = b.toFixed(2);
+            return b;
+        }
+
+        return points;
+    }
+    </script>
+</body>
+
 </html>
